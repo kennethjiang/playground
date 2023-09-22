@@ -237,26 +237,26 @@ class MMDetection(LabelStudioMLBase):
 
         # 计算外接矩形
 
-        if self.out_bbox:
-            new_contours = []
-            for contour in contours:
-                new_contours.extend(list(contour))
-            new_contours = np.array(new_contours)
-            x, y, w, h = cv2.boundingRect(new_contours)
-            print(x, y, w, h)
-            results.append({
-                'from_name': self.from_name_RectangleLabels,
-                'to_name': self.to_name_RectangleLabels,
-                'type': 'rectanglelabels',
-                'value': {
-                    'rectanglelabels': [output_label],
-                    'x': float(x) / original_width * 100,
-                    'y': float(y) / original_height * 100,
-                    'width': float(w) / original_width * 100,
-                    'height': float(h) / original_height * 100,
-                },
-                "id": ''.join(random.SystemRandom().choices(string.ascii_uppercase + string.ascii_lowercase + string.digits, k=6)), # creates a random ID for your label every time
-            })
+#        if self.out_bbox:
+#            new_contours = []
+#            for contour in contours:
+#                new_contours.extend(list(contour))
+#            new_contours = np.array(new_contours)
+#            x, y, w, h = cv2.boundingRect(new_contours)
+#            print(x, y, w, h)
+#            results.append({
+#                'from_name': self.from_name_RectangleLabels,
+#                'to_name': self.to_name_RectangleLabels,
+#                'type': 'rectanglelabels',
+#                'value': {
+#                    'rectanglelabels': [output_label],
+#                    'x': float(x) / original_width * 100,
+#                    'y': float(y) / original_height * 100,
+#                    'width': float(w) / original_width * 100,
+#                    'height': float(h) / original_height * 100,
+#                },
+#                "id": ''.join(random.SystemRandom().choices(string.ascii_uppercase + string.ascii_lowercase + string.digits, k=6)), # creates a random ID for your label every time
+#            })
 
         if self.out_poly:
 
