@@ -100,8 +100,11 @@ Currently, label_anything supports three inference models: SAM, HQ-SAM, and mobi
 # sudo apt install libpq-dev python3-dev # Note: If using Label Studio 1.7.2 version, you need to install libpq-dev and python3-dev dependencies.
 
 # Installing label-studio may take some time. If you cannot find the version, please use the official source.
-pip install label-studio==1.7.3
+sudo pip install label-studio==1.9.1.post0
+sudo pip install label-studio-converter==0.0.57
 pip install label-studio-ml==1.0.9
+pip install rq
+pip install timm
 ```
 
 ## Start the service
